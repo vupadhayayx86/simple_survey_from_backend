@@ -4,7 +4,9 @@ const mongoose=require('mongoose')
 const user_route=require("./routes/users_route")
 const cors=require('cors')
 
-app.use(cors())
+app.use(cors({
+    origin:"http://localhost:5173",
+}))
 app.use(express.json())
 app.use("/users",user_route)
 
