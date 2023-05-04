@@ -7,7 +7,7 @@ const cookieParser=require('cookie-parser')
 app.use(express.json())
 app.use(cors({
     credentials:true,
-    origin:"*",
+    origin:"https://surveyfrontend1.onrender.com/",
 }))
 app.use(cookieParser())
 
