@@ -4,6 +4,10 @@ const bcrypt=require('bcrypt')
 const {Users,validateUsers}=require("../models/users_models")
 
 router.get("/",(req,res)=>{
+    res.header("Access-Control-Allow-Origin: *"); 
+    res.header("Access-Control-Allow-Credentials: true"); 
+    res.header("Access-Control-Allow-Methods: GET, POST"); 
+    res.header("Access-Control-Allow-Headers: Content-Type, *");
     res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
     httpOnly:true,
     maxAge:60*60*3*1000,
