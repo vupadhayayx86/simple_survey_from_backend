@@ -7,7 +7,8 @@ router.get("/",(req,res)=>{
     res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
     httpOnly:true,
     maxAge:60*60*3*1000,
-    secure: true
+    secure: true,
+    
 })
     res.send("Get Router")
 })
