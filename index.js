@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   });
 
 app.use(cors({
-    origin:"https://surveyfrontend1.onrender.com/",
+    origin:"https://surveyfrontend1.onrender.com/users",
     credentials:true,
 }))
 app.use(express.json())
