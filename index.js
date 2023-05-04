@@ -4,19 +4,21 @@ const mongoose=require('mongoose')
 const user_route=require("./routes/users_route")
 const cors=require('cors')
 
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://surveyfrontend1.onrender.com/");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
+
 
 app.use(cors({
     origin:"https://surveyfrontend1.onrender.com/users",
     credentials:true,
 }))
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://surveyfrontend1.onrender.com/");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(express.json())
 app.use("/users",user_route)
 

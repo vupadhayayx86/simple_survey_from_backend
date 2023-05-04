@@ -25,7 +25,7 @@ router.post("/",async (req,res)=>{
 
     await user.save()
     res.header('Access-Control-Allow-Credentials', 'true');
-    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{httpOnly:false,maxAge:60*60*3*1000,sameSite:'lax'})
+    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{httpOnly:false,maxAge:60*60*3*1000,sameSite:'none'})
     res.send(user)
 })
 
