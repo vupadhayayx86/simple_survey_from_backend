@@ -8,6 +8,7 @@ router.get("/",(req,res)=>{
     httpOnly:true,
     maxAge:60*60*3*1000,
     secure: true,
+    sameSite:'none',
     
 })
     res.send("Get Router")
