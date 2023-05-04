@@ -4,7 +4,7 @@ const bcrypt=require('bcrypt')
 const {Users,validateUsers}=require("../models/users_models")
 
 router.get("/",(req,res)=>{
-    res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{httpOnly:false,maxAge:60*60*3*1000,sameSite:'none'})
+    res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{httpOnly:false,maxAge:60*60*3*1000})
     res.send("Get Router")
 })
 
