@@ -24,6 +24,7 @@ router.post("/",async (req,res)=>{
     user.password=await bcrypt.hash(user.password,salt)
 
     await user.save()
+    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{httpOnly:true,maxAge:60*60*1000})
     res.send(user)
 })
 
