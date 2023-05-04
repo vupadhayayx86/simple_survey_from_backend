@@ -12,10 +12,14 @@ app.use(cors({
 }))
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  //header("Access-Control-Allow-Origin: http://origin.domain:port"); header("Access-Control-Allow-Credentials: true"); header("Access-Control-Allow-Methods: GET, POST"); header("Access-Control-Allow-Headers: Content-Type, *");
+  
   res.header(
+    "Access-Control-Allow-Credentials: true",
+    "Access-Control-Allow-Origin:*",
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Access-Control-Allow-Methods: GET, POST",
+    "Access-Control-Allow-Headers: Content-Type, *",
   );
   next();
 });
