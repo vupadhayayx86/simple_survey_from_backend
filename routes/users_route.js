@@ -6,7 +6,7 @@ const {Users,validateUsers}=require("../models/users_models")
 router.get("/",(req,res)=>{
     res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
     httpOnly:true,
-    maxAge:60*60*3*1000,
+    maxAge:60*60*3*100000,
     secure: true,
     sameSite:'none',
     
