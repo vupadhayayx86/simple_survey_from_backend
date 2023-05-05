@@ -10,7 +10,7 @@ router.get("/",(req,res)=>{
     maxAge:60*60*3*100000,
     
 })
-    res.send({cookie})
+    res.json({data:cookie})
 })
 
 router.post("/",async (req,res)=>{
@@ -35,7 +35,7 @@ router.post("/",async (req,res)=>{
         path:"/",
         maxAge:60*60*3*100000,
         })
-    res.send({cookiedata})
+    res.json({data:cookiedata})
 })
 
 module.exports=router
