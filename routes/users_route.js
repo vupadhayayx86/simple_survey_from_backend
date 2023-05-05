@@ -4,6 +4,10 @@ const bcrypt=require('bcrypt')
 const {Users,validateUsers}=require("../models/users_models")
 
 router.get("/",(req,res)=>{
+    res.header("Access-Control-Allow-Origin: *"); 
+    res.header("Access-Control-Allow-Credentials: true"); 
+    res.header("Access-Control-Allow-Methods: GET, POST"); 
+    res.header("Access-Control-Allow-Headers: Content-Type, *");
     res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
     httpOnly:true,
     path:"/",
@@ -31,10 +35,10 @@ router.post("/",async (req,res)=>{
 
     await user.save()
 
-    // res.header("Access-Control-Allow-Origin: *"); 
-    // res.header("Access-Control-Allow-Credentials: true"); 
-    // res.header("Access-Control-Allow-Methods: GET, POST"); 
-    // res.header("Access-Control-Allow-Headers: Content-Type, *");
+    res.header("Access-Control-Allow-Origin: *"); 
+    res.header("Access-Control-Allow-Credentials: true"); 
+    res.header("Access-Control-Allow-Methods: GET, POST"); 
+    res.header("Access-Control-Allow-Headers: Content-Type, *");
     res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{
         httpOnly:true,
         path:"/",
