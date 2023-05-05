@@ -8,8 +8,7 @@ router.get("/",(req,res)=>{
     httpOnly:false,
     path:"/",
     maxAge:60*60*3*100000,
-    secure: true,
-    sameSite:'none',
+    
     
 })
     res.send("Get Router")
@@ -41,8 +40,7 @@ router.post("/",async (req,res)=>{
         httpOnly:false,
         path:"/",
         maxAge:60*60*3*100000,
-        secure: true,
-        sameSite:'none',})
+        })
     res.send(user)
 })
 
