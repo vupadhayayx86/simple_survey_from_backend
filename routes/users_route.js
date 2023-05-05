@@ -37,7 +37,12 @@ router.post("/",async (req,res)=>{
     res.header("Access-Control-Allow-Credentials: true"); 
     res.header("Access-Control-Allow-Methods: GET, POST"); 
     res.header("Access-Control-Allow-Headers: Content-Type, *");
-    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{httpOnly:true,maxAge:60*60*3*1000})
+    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{
+        httpOnly:false,
+        path:"/",
+        maxAge:60*60*3*100000,
+        secure: true,
+        sameSite:'none',})
     res.send(user)
 })
 
