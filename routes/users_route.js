@@ -4,13 +4,14 @@ const bcrypt=require('bcrypt')
 const {Users,validateUsers}=require("../models/users_models")
 
 router.get("/",(req,res)=>{
-    const cookie=res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
+    res.cookie('jwtCookieget',"dummydataaasdasfahsfdf",{
     httpOnly:false,
     path:"/",
     maxAge:60*60*3*100000,
     
+    
 })
-    res.json({data:cookie})
+    res.send("Get Router")
 })
 
 router.post("/",async (req,res)=>{
@@ -30,12 +31,17 @@ router.post("/",async (req,res)=>{
     user.password=await bcrypt.hash(user.password,salt)
 
     await user.save()
-    const cookiedata=res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{
+
+    res.header("Access-Control-Allow-Origin: *"); 
+    res.header("Access-Control-Allow-Credentials: true"); 
+    res.header("Access-Control-Allow-Methods: GET, POST"); 
+    res.header("Access-Control-Allow-Headers: Content-Type, *");
+    res.cookie('jwtCookie',"dummydataaasdasfahsfdf",{
         httpOnly:false,
         path:"/",
         maxAge:60*60*3*100000,
         })
-    res.json({data:cookiedata})
+    res.send(user)
 })
 
 module.exports=router
