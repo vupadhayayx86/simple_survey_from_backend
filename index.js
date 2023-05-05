@@ -4,6 +4,7 @@ const mongoose=require('mongoose')
 const user_route=require("./routes/users_route")
 const cors=require('cors')
 const cookieParser=require('cookie-parser')
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
